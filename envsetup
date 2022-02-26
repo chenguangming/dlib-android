@@ -77,8 +77,8 @@ def download_file(url, desc=None):
     return filename
 
 
-def downloadPrebuiltOpencv(prefix='.', out_prefix='.', version='3.1.0'):
-    OPENCV_PREBUILT_URL = 'http://netix.dl.sourceforge.net/project/opencvlibrary/opencv-android/{0}/OpenCV-{0}-android-sdk.zip'.format(
+def downloadPrebuiltOpencv(prefix='.', out_prefix='.', version='4.5.5'):
+    OPENCV_PREBUILT_URL = 'https://phoenixnap.dl.sourceforge.net/project/opencvlibrary/{0}/opencv-{0}-android-sdk.zip'.format(
         version)
     OPENCV_ARCHIVE = 'OpenCV-{0}-android-sdk.zip'.format(version)
     OPENCV_UNZIP_DIR = 'OpenCV-android-sdk'
