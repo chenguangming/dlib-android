@@ -85,7 +85,7 @@ extern "C" {
 
 
 #define DLIB_FACE_JNI_METHOD(METHOD_NAME) \
-  Java_com_tzutalin_dlib_FaceDet_##METHOD_NAME
+  Java_com_photons_dlib_FaceDet_##METHOD_NAME
 
 void JNIEXPORT
     DLIB_FACE_JNI_METHOD(jniNativeClassInit)(JNIEnv* env, jclass _this) {}
@@ -105,6 +105,7 @@ jobjectArray getDetectResult(JNIEnv* env, DetectorPtr faceDetector,
         faceDetector->getFaceShapeMap();
     if (faceShapeMap.find(i) != faceShapeMap.end()) {
       dlib::full_object_detection shape = faceShapeMap[i];
+  LOG(INFO) << "shap num " << shape.num_parts();
       for (unsigned long j = 0; j < shape.num_parts(); j++) {
         int x = shape.part(j).x();
         int y = shape.part(j).y();

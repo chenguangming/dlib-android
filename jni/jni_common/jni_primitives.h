@@ -12,11 +12,11 @@
 #define CLASSNAME_POINTF "android/graphics/PointF"
 #define CONSTSIG_POINTF "()V"
 
-#define CLASSNAME_VISION_DET_RET "com/tzutalin/dlib/VisionDetRet"
+#define CLASSNAME_VISION_DET_RET "com/photons/dlib/VisionDetRet"
 #define CONSTSIG_VISION_DET_RET "()V"
 
-#define CLASSNAME_FACE_DET "com/tzutalin/dlib/FaceDet"
-#define CLASSNAME_PEDESTRIAN_DET "com/tzutalin/dlib/PedestrianDet"
+#define CLASSNAME_FACE_DET "com/photons/dlib/FaceDet"
+#define CLASSNAME_PEDESTRIAN_DET "com/photons/dlib/PedestrianDet"
 
 class JavaPeer {
  public:
@@ -107,12 +107,12 @@ class JNI_VisionDetRet {
   JNI_VisionDetRet(JNIEnv* env) {
     jclass detRetClass = env->FindClass(CLASSNAME_VISION_DET_RET);
     CHECK_NOTNULL(detRetClass);
-    jID_label = env->GetFieldID(detRetClass, "mLabel", "Ljava/lang/String;");
-    jID_confidence = env->GetFieldID(detRetClass, "mConfidence", "F");
-    jID_left = env->GetFieldID(detRetClass, "mLeft", "I");
-    jID_top = env->GetFieldID(detRetClass, "mTop", "I");
-    jID_right = env->GetFieldID(detRetClass, "mRight", "I");
-    jID_bottom = env->GetFieldID(detRetClass, "mBottom", "I");
+    jID_label = env->GetFieldID(detRetClass, "label", "Ljava/lang/String;");
+    jID_confidence = env->GetFieldID(detRetClass, "confidence", "F");
+    jID_left = env->GetFieldID(detRetClass, "left", "I");
+    jID_top = env->GetFieldID(detRetClass, "top", "I");
+    jID_right = env->GetFieldID(detRetClass, "right", "I");
+    jID_bottom = env->GetFieldID(detRetClass, "bottom", "I");
     jMethodID_addLandmark =
         env->GetMethodID(detRetClass, "addLandmark", "(II)Z");
   }
